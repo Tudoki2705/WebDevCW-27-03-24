@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <title>Healthy Lifestyle Shop</title>
+    <style>
+        h2 {
+            font-size: 30px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .Item1, .Item2, .Item3, .Item4{
+            margin-top:200px;
+            height:400px;
+            float:left;
+            margin-right:14px;
+            background:#727272;
+            padding:40px;
+            width:280px;
+            border-radius:40px;
+        }
+
+        .Item1 img, .Item2 img, .Item3 img, .Item4 img{
+            max-width:100%;
+            height: 200px;
+            display:block;
+            margin:auto;
+        }
+
+        .Item1 select, .Item2 select, .Item3 select, .Item4 select{
+            margin-left:45%;
+        }
+
+        .Item1 span, .Item2 span, .Item3 span, .Item4 span{
+            display:block;
+            text-align: center;
+            font-size: 15px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            margin-bottom:5px;
+        }
+
+        .Quantity{
+            display:inline-block;
+            vertical-align:middle;
+            
+        }
+        
+        #DropdownSize1{
+            margin-left:45%;
+        }
+
+        button {
+            font-size: 16px;
+            padding:6px 10px;
+            margin-left: 29%;
+            display:inline-block;
+            color:#1f1c1c;
+            border-radius:20px;
+            background-color: #919191;
+            
+        }
+        button:hover{
+            cursor:pointer;
+        }
+
+        .basket{
+            float: right;
+            background: #353432;
+            color:#eee;
+            padding: 20px;
+            border-radius: 10px;
+            height:850px;
+            width: 310px;
+        }
+
+        .basket ul {
+            height:100px;
+            margin:0;
+            padding:0;
+        }
+
+        .Reset,.Checkout {
+            margin-left:0;
+        }
+
+        .Reset:hover,.Checkout:hover{
+            cursor: pointer;
+        }
+        
+        
+        #basketItems li {
+            margin-bottom: 5px;
+            font-size: 16px;
+            list-style-type:none;
+        }
+
+        .total {
+            font-size: 16px;
+            margin-left:8px;
+            margin-top:200%;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+        .dropdown{
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid white;
+            width: 200px;
+            height: 100px;
+            margin-left: 52.25%;
+        }
+
+        .dropdown a{
+            display: block;
+            margin-left: 2px;
+            color: black;
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    <nav>
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/home.html">Home</a>
+        <a href="https://w2045735.users.ecs.westminster.ac.uk/webdev/shop.html">Shop</a>
+        <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/profile.html">User Profile</a>
+        <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/team.html">Team</a>
+        <a id="content-dropdown">Content Page</a>
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/feedback.html">Feedback Form</a> 
+    </nav>
+    
+    <div class="dropdown">
+        <a href="https://w2045735.users.ecs.westminster.ac.uk/webdev/content_ST1.html">Nutrition</a><br>
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/content_ST2.html">Mental Health</a><br>
+        <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/content_ST3.html">Exercise</a>
+    </div>
+
+    <div class="Item1">
+        <img src="Images/healthy2.jpg" alt="healthy">
+        <form>
+            <span> Education against narcotics </span> <br>
+            <span> £1 </span> <br>
+            <span class="Quantity"> Quantity</span> 
+            <select name="DropDownQuantity" id="DropdownQ1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <button type="button" name="button" onclick="addToBasket('Education against narcotics', 1, document.getElementById('DropdownQ1').value)">Add to Basket</button>
+        </form>
+    </div>
+
+    <div class="Item2">
+        <img src="Images/Healthy_Lifestyle_Shirt.jpg" alt="healthyshirt">
+        <form>
+            <span> Healthy Lifestyle shirt </span> <br>
+            <span> £5 </span> <br>
+            <span class="Quantity"> Quantity</span> 
+            <select name="DropDownQuantity" id="DropdownQ2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <span class="Size"> Size</span>
+            <select name="DropDownSize" id="DropdownSize1" >
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <button type="button" name="button" onclick="addToBasket('Healthy Lifestyle Shirt', 5, document.getElementById('DropdownQ2').value,document.getElementById('DropdownSize1').value)">Add to Basket</button>
+        </form>
+    </div>
+
+    <div class="Item3">
+        <img src="Images/Skipping_Rope.jpg" alt="Rope">
+        <form>
+            <span> Skipping rope </span> <br>
+            <span> £3 </span> <br>
+            <span class="Quantity"> Quantity</span>
+            <select name="DropDownQuantity" id="DropdownQ3">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <button type="button" name="button" onclick="addToBasket('Skipping Rope', 3, document.getElementById('DropdownQ3').value)">Add to Basket</button>
+        </form>
+    </div>
+
+    <div class="Item4">
+        <form>
+            <img src="Images/White_Bottle.jpg" alt="bottle" id="displayImage">
+            <span> Water Bottle </span> <br>
+            <span> £2 </span> <br>
+            <span class="Quantity"> Quantity</span>
+            <select name="DropDownQuantity" id="DropdownQ4">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <select name="Colour" id="colourChange">
+                <option value="White">White</option>
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+            </select>
+            <button type="button" name="button" onclick="addToBasket('Water Bottle', 2, document.getElementById('DropdownQ4').value,'',document.getElementById('colourChange').value)">Add to Basket</button>
+        </form>
+    </div>
+
+    <div class="basket">
+        <h2><u>Basket</u></h2>
+        <ul id="basketItems"></ul>
+        <div class="total" id="totalAmount">Total: £0.00</div>
+            <button class="Reset" onclick="resetBasket()" style ="background-color:rgb(70, 1, 1)">Reset</button>
+            <form style="display:inline-block">
+                <button type="button" onclick="checkout()" class="Checkout" style="background-color:rgb(4, 167, 4)">Checkout</button>
+            </form>
+    </div>
+
+    <script>
+    
+    var validate;
+    var totalItems = 0;
+    var maxTotalItems = 10;
+    var totalPrice = 0;
+    function addToBasket(item, price, quantity,size,colour) {
+        var name = item;
+        var Price = price * quantity;
+        var basketList = document.getElementById("basketItems");
+        var basketItems = basketList.getElementsByTagName("li");
+
+        // Check if adding the new item exceeds the maximum total items
+        if (totalItems > maxTotalItems) {
+            alert("No more space in your basket!.");
+            return; // Exit the function if the maximum limit is exceeded
+        }
+        else{
+            // Create a new <li> element to represent the item in the basket
+            var basketItem = document.createElement("li");
+            if (name == "Education against narcotics"){
+                basketItem.innerHTML = '<img src="Images/healthy2.jpg" alt="healthy2" style="width: 50px; height: 50px;">' + name + ", £" + Price +" - " + quantity + "x";
+            }
+            else if (name == "Healthy Lifestyle Shirt"){
+                basketItem.innerHTML = '<img src="Images/Healthy_Lifestyle_Shirt.jpg" alt="healthyshirt" style="width: 50px; height: 50px;">' + name +", Size: "+ size + ", £" + Price +" - " + quantity + "x";
+            }
+            else if (name == "Skipping Rope"){
+                basketItem.innerHTML = '<img src="Images/Skipping_Rope.jpg" alt="Rope" style="width: 50px; height: 50px;">' + name + ", £" + Price +" - " + quantity + "x";
+            }
+            else if (name == "Water Bottle"){
+                switch (colour){
+                    case "White":
+                        basketItem.innerHTML = '<img src="Images/White_Bottle.jpg" alt="whitebottle" style="width: 50px; height: 50px;">' + name +", Colour: "+ colour + ", £" + Price +" - " + quantity + "x";
+                        break;
+                    case "Red":
+                        basketItem.innerHTML = '<img src="Images/Red_Bottle.jpg" alt="redbottle" style="width: 50px; height: 50px;">' + name +", Colour: "+ colour + ", £" + Price +" - " + quantity + "x";
+                        break;
+                    case "Blue":
+                        basketItem.innerHTML = '<img src="Images/Blue_Bottle.jpg" alt="bluebottle" style="width: 50px; height: 50px;">' + name +", Colour: "+ colour + ", £" + Price +" - " + quantity + "x";
+                        break;
+                    case "Green":
+                        basketItem.innerHTML = '<img src="Images/Green_Bottle.jpg" alt="greenbottle" style="width: 50px; height: 50px;">' + name +", Colour: "+ colour + ", £" + Price +" - " + quantity + "x";
+                        break;
+                }
+            }
+            basketList.appendChild(basketItem);
+            updateTotalAmount(Price);
+            totalItems += 1;
+        }
+
+    }
+    //Updates the overall total
+    function updateTotalAmount(Price) {
+            totalPrice += Price;
+            document.getElementById("totalAmount").textContent = "Total: £" + total;
+        }
+
+    function resetBasket() {
+        var basketList = document.getElementById("basketItems");
+        basketList.innerHTML = ""; // Clear the content of the basket
+        totalItems = 0;
+        total = 0;
+        document.getElementById("totalAmount").textContent = "Total: £0.00";
+    }
+    function checkout(){
+        if (document.getElementById("basketItems").getElementsByTagName("li").length > 0){
+            location.replace("https://w2045735.users.ecs.westminster.ac.uk/webdev/shop2.html");
+        }
+        else{
+            alert("Basket empty")
+        }
+    }
+
+    const colourChange = document.getElementById("colourChange");
+    const displayImage = document.getElementById("displayImage");
+    colourChange.addEventListener("change", function() {
+        const selectedImage = colourChange.value;
+
+            if (selectedImage === "Red") {
+                displayImage.src = "Images/Red_Bottle.jpg";
+            } 
+            else if (selectedImage === "Green") {
+                displayImage.src = "Images/Green_Bottle.jpg";
+            }
+            else if (selectedImage === "White") {
+                displayImage.src = "Images/White_Bottle.jpg";
+            }
+            else if (selectedImage === "Blue") {
+                displayImage.src = "Images/Blue_Bottle.jpg";
+            }
+        });
+    </script>
+</body>
+</html>

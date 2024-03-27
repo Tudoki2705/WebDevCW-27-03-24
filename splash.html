@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="4; url=https://w1970083.users.ecs.westminster.ac.uk/webDev/home.html">
+    <title>Web development coursework</title>
+    <style>
+        body{
+            background-color:#333333;
+        }
+        /* Youtube video https://www.youtube.com/watch?v=q76TexbMXJg*/
+        .loading_screen img {
+            margin-left:auto;
+            margin-right:auto;
+            display:block;
+            justify-content:center;
+            height:600px;
+            width:600px;
+        }
+        .loading_screen p{
+            text-align:center;
+            margin-right:auto;
+            margin-left:auto;
+            bottom:0;
+            width:400px;
+        }
+        .loading_screen::after{
+            content:"";
+            width:150px;
+            height: 150px;
+            bottom:0;
+            right:0;
+            position:fixed;
+            border:15px solid #ffffff;
+            border-top-color: lightskyblue;
+            border-radius:50%;
+            animation:loading 1s ease infinite;
+        }
+        .loading_screen h1{
+            text-align:center;
+            font-size:70px;
+            font-family:sans-serif;
+            
+        }
+        @keyframes loading {
+            from {transform: rotate(0turn) } 
+            to {transform: rotate(1turn) }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading_screen">
+        <h1>Healthy Lifestyles</h1>
+        <img src="Images/healthy2.jpg" alt="healthy">
+        <p> Kevin Bui, Mohammed Nahid Ullah, Yunus Akdag</p>
+    </div>
+</body>
+
+</html>

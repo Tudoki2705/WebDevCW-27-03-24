@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout Page</title>
+    <style>
+        body {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .checkout {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+        .dropdown{
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid white;
+            width: 200px;
+            height: 100px;
+            margin-left: 52.25%;
+        }
+
+        .dropdown a{
+            display: block;
+            margin-left: 2px;
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/home.html">Home</a>
+        <a href="https://w2045735.users.ecs.westminster.ac.uk/webdev/shop.html">Shop</a>
+        <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/profile.html">User Profile</a>
+        <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/team.html">Team</a>
+        <a id="content-dropdown">Content Page</a>
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/feedback.html">Feedback Form</a>
+    </nav>
+    <div class="dropdown">
+    
+        <a
+    href="https://w2045735.users.ecs.westminster.ac.uk/webdev/content_ST1.html">Nutrition</a><br>
+    
+        <a
+    href="https://w1970083.users.ecs.westminster.ac.uk/webDev/content_ST2.html">Mental
+     Health</a><br>
+    
+        <a
+    href="https://w1968139.users.ecs.westminster.ac.uk/webDev/content_ST3.html">Exercise</a>
+    
+    </div>
+    <div class="checkout">
+        <h2>Checkout</h2>
+        <form action="https://w2045735.users.ecs.westminster.ac.uk/webdev/shop.html" method="post">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="postcode">Postcode:</label>
+            <input type="text" id="postcode" name="postcode" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            
+            <input type="submit" value="Submit Order">
+        </form>
+    </div>
+
+    <script>
+        function submitForm() {
+            alert("Thanks for the order!");
+
+        }
+    </script>
+</body>
+</html>
+
