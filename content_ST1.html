@@ -8,17 +8,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
         
         .nutrition {
             max-width: 800px;
             margin: 20px auto;
             padding: 0 20px;
+            line-height: 1.6;
         }
 
         h1, h2, h3 {
             margin-top: 30px;
+            line-height: 1.6;
         }
 
         footer {
@@ -29,6 +30,7 @@
             color: #fff;
             padding: 10px 0;
             text-align: right;
+            line-height: 1.6;
         }
 
         .back_to_top img {
@@ -57,6 +59,10 @@
             color: white;
             text-align: center;
             padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            left: 0px;
         }
 
         nav a {
@@ -69,14 +75,16 @@
         nav a:hover {
             background-color: #555;
         }
+
         .dropdown{
             display: none;
-            position: absolute;
+            position: fixed;
+            margin-top: 18px;
             background-color: white;
-            border: 1px solid white;
+            border: 1px solid black;
             width: 200px;
             height: 100px;
-            margin-left: 52.25%;
+            margin-left: 52.2%;
         }
 
         .dropdown a{
@@ -94,7 +102,7 @@
         <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/profile.html">User Profile</a>
         <a href="https://w1968139.users.ecs.westminster.ac.uk/webDev/team.html">Team</a>
         <a id="content-dropdown">Content Page</a>
-        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/feedback.html">Feedback Form</a> 
+        <a href="https://w1970083.users.ecs.westminster.ac.uk/webDev/feedback.html">Feedback Form</a>
     </nav>
     
     <div class="dropdown">
@@ -105,7 +113,7 @@
 
     <div class="nutrition">
         <ul class="content-list">
-            <li style="background-color: aquamarine;"><a href="#introduction">Introduction</a></li>
+            <li style="background-color: aquamarine; padding-top: 20px;"><a href="#introduction">Introduction</a></li>
             <li style="background-color:rgb(52, 52, 252);"><a href="#essential-nutrients">Essential Nutrients</a></li>
             <li style="background-color: rgb(205, 255, 27);"><a href="#balanced-diet">Benefits of a Balanced Diet</a></li>
             <li style="background-color:chocolate;"><a href="#eating-habits">Healthy Eating Habits</a></li>
@@ -153,5 +161,25 @@
     <footer>
         <a href="#top" class="back_to_top"><img src="Images/back_to_top_arrow.png" alt="top_arrow"></a>
     </footer>
+
+    <script>
+        var contentDropdown = document.getElementById('content-dropdown');
+        var dropdown = document.querySelector('.dropdown');
+    
+        contentDropdown.addEventListener('mouseover', function() {
+            dropdown.style.display = 'block';
+        });
+    
+        dropdown.addEventListener('mouseover', function() {
+            dropdown.style.display = 'block';
+        });
+    
+        dropdown.addEventListener('mouseout', function(event) {
+            // Check if the mouseout event is not triggered when moving from the contentDropdown to the dropdown
+            if (!contentDropdown.contains(event.relatedTarget)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

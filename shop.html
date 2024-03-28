@@ -324,6 +324,24 @@
                 displayImage.src = "Images/Blue_Bottle.jpg";
             }
         });
+    
+    var contentDropdown = document.getElementById('content-dropdown');
+    var dropdown = document.querySelector('.dropdown');
+    
+    contentDropdown.addEventListener('mouseover', function() {
+        dropdown.style.display = 'block';
+    });
+    
+    dropdown.addEventListener('mouseover', function() {
+        dropdown.style.display = 'block';
+    });
+    
+    dropdown.addEventListener('mouseout', function(event) {
+        // Check if the mouseout event is not triggered when moving from the contentDropdown to the dropdown
+        if (!contentDropdown.contains(event.relatedTarget)) {
+            dropdown.style.display = 'none';
+        }
+    });
     </script>
 </body>
 </html>
